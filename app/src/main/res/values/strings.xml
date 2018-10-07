@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">JedAI Clean Playground</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="real_time_events">Real Time Events</string>
+    <string name="poi_visits">POI Visits</string>
+    <string name="location_history">Location History</string>
+    <string name="settings">Settings</string>
+    <string name="about_jedai">JedAI is &lt;strong&gt;the first on-handset AI engine&lt;/strong&gt;, designed to provide real-time location and contextual status information with &lt;strong&gt;ultra-low battery consumption and maximum privacy management&lt;/strong&gt;.&lt;br/&gt;JedAI provides extended opportunities for app developers in many different industries app categories and verticals. By integrating JedAI SDK into your apps, you will be able to understand the current and future context of your users’ on individual handsets and adjust your services accordingly, resulting in higher user engagement, customer satisfaction, and revenues.</string>
+    <string name="solutions">Learn, predict and better engage in real-time contextual understanding and location intelligence. In implementing JedAI SDK:
+&lt;ul&gt;
+&lt;li &gt;User profile and segmentation&lt;ul&gt;
+&lt;li &gt;Better understand the characteristics and profile of your app’s end user&lt;/li&gt;&lt;li &gt;Segmentation, profiling and personalization, resulting in better and more contextual user engagements&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;&lt;li &gt;Optimize users’ experience with relevant personalized offerings and real-time engagement, based on their automated activity journal and holistic profile. &lt;/li&gt;&lt;li &gt;No server dependency - resulting in minimal battery consumption. Understand user mobility and location 24/7 with no more than 1% battery life consumed daily. &lt;/li&gt;&lt;li &gt;Ultimate privacy management - the world’s first on-handset AI engine, fully independent from back-end server communication.&lt;/li&gt;&lt;li &gt;Predict customer behavior patterns&lt;/li&gt;&lt;li &gt;Insight for customer retention: identify if customers are visiting competitive brands&lt;/li&gt;&lt;li &gt;Open new monetization channels (for automotive, insurance, banking, retail, smart city and more)&lt;/li&gt;&lt;li &gt;Mobility and location pattern insights of drivers and consumers which can result in forecasting user intent, leading to better services and enhanced advertising revenues&lt;/li&gt;&lt;li &gt;Customer retention - identify if customers are visiting competitive brands&lt;/li&gt;&lt;li &gt;Frequented locations – learn behaviors of your users and locations (for example sporting event locations) they frequently visit&lt;/li&gt;&lt;li &gt;Mobility and location pattern insights of drivers and consumers which can result in forecasting user intent, leading to better services and enhanced advertising revenues&lt;/li&gt;&lt;li &gt;Real-time hyper local location-based services based on accurate locations combined with type of activity.&lt;/li&gt;&lt;li&gt;Analyze app users – gain insight into user behavior and create First Party Data&lt;/li&gt;&lt;/ul&gt;</string>
+    <string name="jedai_version">JedAI version</string>
+    <string name="info_rt_events">One of the most powerful features of JedAI SDK is the option to understand complex combinations of events that occur in real-time (Referred to as Event Listener / Listener). Allowing you to optimize your users\' experience with relevant personalized offerings and real-time engagement.</string>
+    <string name="enter">Enter</string>
+    <string name="exit">Exit</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="poi_visits_info">A visit is a perceived as a length of stay in one place (an area of a 100 meter radius) for a minimum duration of 10 minutes. Once the SDK recognized that a visit started, it will trigger a \"Visit Start\" event. The visit will be marked as ended once the user leaves the area, meaning - the location is outside the 100 meter radius. </string>
+</resources>

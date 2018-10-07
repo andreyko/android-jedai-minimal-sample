@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "759339873284",
+    "firebase_url": "https://jedaicleanplayground.firebaseio.com",
+    "project_id": "jedaicleanplayground",
+    "storage_bucket": "jedaicleanplayground.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759339873284:android:5337dd5f9407e691",
+        "android_client_info": {
+          "package_name": "com.anagog.jedaicleanplayground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759339873284-3coc5upaam4lb5jrnkgs0b5taa8tro69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGbc01AxquQ8R9nhcs8nBzcWnr3tUNrZo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

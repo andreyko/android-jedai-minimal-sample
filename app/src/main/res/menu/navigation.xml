@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_rt_events"
+        android:icon="@drawable/ic_jedai_events_24dp"
+        android:title="@string/real_time_events"/>
+
+    <item
+        android:id="@+id/navigation_poi_visits"
+        android:icon="@drawable/ic_enter_black_24dp"
+        android:title="@string/poi_visits"/>
+
+    <item
+        android:id="@+id/navigation_location_history"
+        android:icon="@drawable/ic_top_location_black_24dp"
+        android:title="@string/location_history"/>
+
+    <item
+        android:id="@+id/navigation_jedai"
+        android:icon="@drawable/ic_brain"
+        android:title="@string/app_name"/>
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/settings"/>
+
+</menu>
