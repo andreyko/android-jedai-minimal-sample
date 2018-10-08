@@ -4,7 +4,7 @@
 
             dependencies {
                 ...
-                implementation "com.anagog.jedai:core:4.3.0-canary-2"
+                implementation "com.anagog.jedai:core:4.3.0"
                 ...
             }
 
@@ -13,15 +13,7 @@
             repositories {
                 ...
                 maven {
-                    url "https://repository.anagog.com/artifactory/gradle-dev-local/"
-                    credentials {
-                        username = "username"
-                        password = "password"
-                    }
-    
-                    authentication {
-                        basic(BasicAuthentication)
-                    }
+                    url "https://repository.anagog.com/artifactory/gradle-release/"
                 }
                 ...
             }
@@ -54,7 +46,7 @@
 
     In order to receive "activity" events from JedAI SDK add this dependency to module level build.gradle :
 
-        implementation 'com.google.android.gms:play-services-location:15.0.1'
+        implementation 'com.google.android.gms:play-services-location:16.0.0'
 
 
 
