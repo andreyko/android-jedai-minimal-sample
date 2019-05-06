@@ -20,7 +20,7 @@ public class ActivityMain extends AppCompatActivity {
 
         //jedAi start only after getting user permissions
         if (requestCheckPermissions()) {
-            JedAIHelper.StartJedAi();
+            JedAIHelper.startJedAi();
         }
     }
 
@@ -48,11 +48,11 @@ public class ActivityMain extends AppCompatActivity {
 
             if (result != PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "You have to accept all permission for using this app!", Toast.LENGTH_LONG).show();
-                break;
+                return;
             }
         }
 
-        JedAIHelper.StartJedAi();
+        JedAIHelper.startJedAi();
     }
 
 
@@ -60,7 +60,7 @@ public class ActivityMain extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        JedAIHelper.getAllInVehicleEvents();
+        JedAIHelper.printAllInVehicleEvents();
     }
 
     @Override

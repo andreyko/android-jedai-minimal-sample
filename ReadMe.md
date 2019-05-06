@@ -4,7 +4,7 @@
 
             dependencies {
                 ...
-                implementation "com.anagog.jedai:core:4.3.0"
+                implementation "com.anagog.jedai:core:4.5.6"
                 ...
             }
 
@@ -18,19 +18,6 @@
                 ...
             }
 
-    - add manifest placeholders at "defaultConfig" section:
-
-            android {
-                ...
-                defaultConfig {
-                    applicationId "com.anagog.jedaiplayground"
-                    ...
-                    manifestPlaceholders = [appId: "com.anagog.jedaiplayground"]
-                }
-                ...
-            }
-
-
 
 
 * add permissions
@@ -38,6 +25,10 @@
     In order to receive "activity" events from JedAI SDK add this permission at AndroidManifest.xml :
 
         <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+
+    In order to improve the accuracy add the fine location permission:
+
+        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
 
 
