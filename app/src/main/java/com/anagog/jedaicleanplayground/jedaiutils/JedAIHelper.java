@@ -83,7 +83,10 @@ public class JedAIHelper {
                 null,null,null,null)) {
             while (cursorActivities.moveToNext()) {
                 long durationMinutes = (cursorActivities.getLong(0) - cursorActivities.getLong(1)) / DateUtils.MINUTE_IN_MILLIS;
-                Log.i("jedAIAPI", "activity type: " + ActivityInVehicleEvent.activityToString(cursorActivities.getInt(2)) + ", Duration: " + durationMinutes + " min");
+                Log.i("jedAIAPI", "activity type: " +
+                        ActivityInVehicleEvent.activityToString(cursorActivities.getInt(cursorActivities.getColumnIndex(ActivityHistoryContract.COLUMN_NAME_ACTIVITY_TYPE))) +
+                        ", Duration: " + durationMinutes + " min vehicle type " +
+                        cursorActivities.getInt(cursorActivities.getColumnIndex(ActivityHistoryContract.COLUMN_NAME_VEHICLE_TYPE)));
             }
         }
     }
