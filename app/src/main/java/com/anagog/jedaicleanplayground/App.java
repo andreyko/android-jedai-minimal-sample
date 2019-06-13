@@ -8,9 +8,10 @@ import android.util.Log;
 import com.anagog.jedai.common.JedAIEvent;
 import com.anagog.jedai.common.JedAIEventListener;
 import com.anagog.jedai.core.api.JedAI;
+import com.anagog.jedai.plugin.smartpoi.JedAISmartPoi;
+import com.anagog.jedai.plugin.smartpoi.ServiceConfig;
+import com.anagog.jedai.plugin.smartpoi.SmartPoiAlgorithmType;
 import com.anagog.jedaicleanplayground.jedaiutils.JedAIHelper;
-
-
 
 public class App extends Application {
 
@@ -39,17 +40,45 @@ public class App extends Application {
 
         //copy database on very first run
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        if (!preferences.contains("isFirstRun")){
+        if (!preferences.contains("isFirstRun")) {
             JedAIHelper.copyDBonFirstRun(this);
             preferences.edit().putBoolean("isFirstRun", false).apply();
         }
 
         // JedAI SDK setup, preferable to be called here on the App onCreate
         JedAI.setup(this);
-        // this helper fuction register a listener for the real time events
+        // this helper function register a listener for the real time events
         JedAIHelper.registerAllEventsListener(jedAIEventListener);
 
+
+        // The code below needs instance of the JedAI
+        // So we must exit if JedAI is null
+        if (JedAI.getInstance() == null) {
+            return;
+        }
+
+        // Allow increasing locations sampling during riding
+        JedAI.getInstance().setInVehicleLocationRate(10, true);
+
+        // Initialize and start SmartPoi module
+        JedAISmartPoi.setup(this, JedAI.getInstance());
+        JedAISmartPoi.getInstance().setServices(createServiceConfig());
+        JedAISmartPoi.getInstance().start();
+
         //don't start the jedAi sdk here! do it in the main activity after getting the user permissions.
+    }
+
+    private ServiceConfig createServiceConfig() {
+        return new ServiceConfig.Builder()
+                .setServiceInfo(
+                        SmartPoiAlgorithmType.Algorithm_3,
+                        true,
+                        null) // <-- nothing to initialize here
+                .setServiceInfo(
+                        SmartPoiAlgorithmType.Algorithm_4,
+                        true,
+                        null) // <-- nothing to initialize here
+                .build();
     }
 
 }

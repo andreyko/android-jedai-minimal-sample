@@ -1,17 +1,19 @@
 package com.anagog.jedaicleanplayground;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+
 import com.anagog.jedaicleanplayground.jedaiutils.JedAIHelper;
 
 public class ActivityMain extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,17 +57,27 @@ public class ActivityMain extends AppCompatActivity {
         JedAIHelper.startJedAi();
     }
 
-
-
     @Override
     protected void onResume() {
         super.onResume();
-        JedAIHelper.printAllInVehicleEvents();
+
+        performDemo();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    @SuppressLint("StaticFieldLeak")
+    private void performDemo() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... voids) {
+                JedAIHelper.printAllInVehicleEvents();
+                JedAIHelper.printHome();
+                JedAIHelper.printPrimaryOffice();
+                JedAIHelper.printAllOffices();
+                JedAIHelper.printAllTrips();
+
+                return null;
+            }
+        }.execute();
     }
 
 }
