@@ -12,6 +12,7 @@ import com.anagog.jedai.common.JedAIEventListener;
 import com.anagog.jedai.common.activity.ActivityEvent;
 import com.anagog.jedai.common.contracts.ActivityHistoryContract;
 import com.anagog.jedai.common.poi.Poi;
+import com.anagog.jedai.common.poi.Point;
 import com.anagog.jedai.common.trip.ClusteredTrip;
 import com.anagog.jedai.core.api.JedAI;
 import com.anagog.jedai.plugin.smartpoi.JedAISmartPoi;
@@ -138,18 +139,21 @@ public class JedAIHelper {
             ClusteredTrip clusteredTrip = clusteredTrips.get(i);
 
             if (clusteredTrip != null) {
+                Point startLocation = clusteredTrip.getStartLocation();
+                Point stopLocation = clusteredTrip.getStopLocation();
+
                 Log.i(TAG, String.format(
                         "Trips cluster #%d: " +
-                                "StartLatitude = %f, " +
-                                "StartLongitude = %f, " +
-                                "StopLatitude = %f, " +
-                                "StopLongitude = %f, " +
+                                "StartLatitude = %s, " +
+                                "StartLongitude = %s, " +
+                                "StopLatitude = %s, " +
+                                "StopLongitude = %s, " +
                                 "TripsInCluster = %d",
                         i,
-                        clusteredTrip.getStartLatitude(),
-                        clusteredTrip.getStartLongitude(),
-                        clusteredTrip.getStopLatitude(),
-                        clusteredTrip.getStopLongitude(),
+                        startLocation == null ? "?" : String.valueOf(startLocation.getLatitude()),
+                        startLocation == null ? "?" : String.valueOf(startLocation.getLongitude()),
+                        stopLocation == null ? "?" : String.valueOf(stopLocation.getLatitude()),
+                        stopLocation == null ? "?" : String.valueOf(stopLocation.getLongitude()),
                         clusteredTrip.getTrips() == null ? 0 : clusteredTrip.getTrips().size()));
             } else {
                 Log.i(TAG, String.format("Trips cluster #%d is null", i));
